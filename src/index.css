@@ -1,0 +1,123 @@
+/* stylelint-disable */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* stylelint-enable */
+
+/* RTL Support */
+html[dir="rtl"] {
+  text-align: right;
+}
+
+html[dir="rtl"] .ml-auto {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+html[dir="rtl"] .mr-auto {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+html[dir="rtl"] .ml-1,
+html[dir="rtl"] .ml-2,
+html[dir="rtl"] .ml-3,
+html[dir="rtl"] .ml-4,
+html[dir="rtl"] .ml-5,
+html[dir="rtl"] .ml-6 {
+  margin-left: 0;
+  margin-right: 0.25rem;
+  margin-right: var(--ml-value, 0.25rem);
+}
+
+html[dir="rtl"] .mr-1,
+html[dir="rtl"] .mr-2,
+html[dir="rtl"] .mr-3,
+html[dir="rtl"] .mr-4,
+html[dir="rtl"] .mr-5,
+html[dir="rtl"] .mr-6 {
+  margin-right: 0;
+  margin-left: 0.25rem;
+  margin-left: var(--mr-value, 0.25rem);
+}
+
+html[dir="rtl"] .space-x-1 > :not([hidden]) ~ :not([hidden]),
+html[dir="rtl"] .space-x-2 > :not([hidden]) ~ :not([hidden]),
+html[dir="rtl"] .space-x-3 > :not([hidden]) ~ :not([hidden]),
+html[dir="rtl"] .space-x-4 > :not([hidden]) ~ :not([hidden]),
+html[dir="rtl"] .space-x-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+}
+
+/* Animations */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slide-in-right {
+  from { transform: translateX(30px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slide-in-left {
+  from { transform: translateX(-30px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes scale-in {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Animation classes */
+.animate-fade-in {
+  animation: fade-in 0.5s ease forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.5s ease forwards;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.5s ease forwards;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.5s ease forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.5s ease forwards;
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s infinite ease-in-out;
+}
+
+/* Animation delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* Language switch animation */
+.language-switch-icon {
+  transition: transform 0.3s ease;
+}
+
+.language-switch:hover .language-switch-icon {
+  transform: rotate(20deg);
+}
